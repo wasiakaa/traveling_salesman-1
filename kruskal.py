@@ -1,7 +1,7 @@
 from graph import *
 
 def is_path(G,a,b):
-    ''' true if htere is a path from a to b in G else false, bfs'''
+    ''' true if htere is a path from a to b in G else false, bfss'''
     visited = []
     q=[]
     visited.append(a)
