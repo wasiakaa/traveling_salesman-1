@@ -53,18 +53,7 @@ def find_min_weight(G):
 
     return [a,b,m]
 
-M=[[0,0,1],[3,0,1],[4,5,0]]
-dicto={
 
-    "a": {"c":1,"d":4,"b":5},
-    "b": {"a":5,"f":6},
-    "c": {"a":1,"e":2,"d":3},
-    "d": {"a":4,"c":3,"f":8},
-    "e": {"c":2,"g":9,"f":7},
-    "f": {"b":6,"d":8,"e":7},
-    "g": {"e":9}
-}
-grafus=graph(dicto)
 
 
 def kruskal(Gr):
@@ -91,7 +80,7 @@ def kruskal(Gr):
 
     return T
 
-print(kruskal(grafus))
+
 
 
 

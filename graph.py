@@ -20,30 +20,3 @@ class graph():
         self.G[a][b]=w
         self.G[b][a] = w
 
-
-
-M=[[0,0,1],[3,0,1],[4,5,0]]
-grafus=graph(M)
-#print(grafus.G)
-grafus2=graph(grafus.G.copy())
-grafus.add_edge(0,1,100)
-
-#(grafus.G)
-dicto={
-
-    "a": {"b":2,"c":2},
-    "b": {"b":20},
-    "c": {"a":177},
-    "d": {}
-}
-
-
-#print(grafus.G[1].keys())
-#print(list(dicto["a"]))
-#print(len(dicto)) #O(1)
-#print(dicto["d"]=={})
-#print(min(dicto["a"],key=dicto["a"].get))
-
-
-del dicto["a"]["b"]
-print(dicto)
