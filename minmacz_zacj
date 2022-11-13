@@ -1,7 +1,0 @@
-def min_match(Graf):
-    '''G is a graph from our graph class
-    returns a graph which is a min maximal matching
-    '''
-    NXG=Graf.to_nx()
-    print(NXG.nodes())
-    return nx.max_weight_matching(NXG)
