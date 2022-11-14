@@ -13,7 +13,7 @@ G2 = (graph({'0':{'1':3.2}, '1':{'1':3.2}, '2':{}}).G)
 
 class MyTestCase(unittest.TestCase):
 
-# I'm testing the "is_path" function.
+# I'm testing the "is_path" function. 
 
     def test_is_path_1(self):
         result = kruskal.is_path(F, 1, 2)
