@@ -1,4 +1,4 @@
-'to chyba do usunięcia'
+' chyba do usunięcia'
 
 import networkx as nx
 
