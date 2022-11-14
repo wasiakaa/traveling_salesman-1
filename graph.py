@@ -4,6 +4,15 @@ class graph():
         if(type(M)==dict):
             self.G= M
             return
+        tajp = type(nx.empty_graph())
+        if (type(M)==tajp):
+            self.G = {}
+            for v in M.nodes:
+                self.G[v]={}
+            for (v,w) in M.edges:
+                self.G[v][w]=M.get_edge_data(v,w)['wegiht']
+                self.G[w][v] = M.get_edge_data(v, w)['wegiht']
+            return
         if(type(M)!=list):
             raise Exception("sorry, wrong type")
         #here i assume M is an adjacency matrix
