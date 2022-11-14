@@ -23,3 +23,5 @@ def christofides(G):
     E = nx.eulerian_circuit(Multigraf)
 
     'H = cykl Hamiltona z E'
+
+    'return H'
