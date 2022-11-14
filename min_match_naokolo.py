@@ -1,3 +1,5 @@
+'to chyba do usunięcia'
+
 import networkx as nx
 
 def min_weight_matching(G, maxcardinality=None, weight="weight"):
