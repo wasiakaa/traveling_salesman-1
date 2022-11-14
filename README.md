@@ -26,7 +26,10 @@ dojechać i zwracała trasę znalezioną przez nasz algorytm.
 [1] Prof. L. Cowen, Scribe: S. Tauber, Lecture notes on *The Travelling Salesman
 Problem (TSP)*, Comp260: Advanced Algorithms, Tufts University, Spring
 2002  
-[2] A. S. Biswas, Recorded Lecture *R9. Approximation Algorithms: Traveling Salesman Problem*, 6.046J Design and Analysis of Algorithms, MIT, Spring 2015, https://www.youtube.com/watch?v=zM5MW5NKZJg&t=1168s  
-[3] N. Christofides, Worst-Case Analysis of a New Heuristic
+[2] Prof. L. Cowen, Scribe: S. Tauber, Lecture notes on *The Travelling Salesman
+Problem (TSP)*, Comp260: Advanced Algorithms, Tufts University, Spring
+2018, http://www.cs.tufts.edu/comp/260/public_html/lecture3a.pdf  
+[3] A. S. Biswas, Recorded Lecture *R9. Approximation Algorithms: Traveling Salesman Problem*, 6.046J Design and Analysis of Algorithms, MIT, Spring 2015, https://www.youtube.com/watch?v=zM5MW5NKZJg&t=1168s  
+[4] N. Christofides, Worst-Case Analysis of a New Heuristic
 for the Travelling Salesman Problem, *SN Operations Research Forum 3(1)*, 2022, 1--4, https://apps.dtic.mil/dtic/tr/fulltext/u2/a025602.pdf  
-[4] P. E. Black, Christofides algorithm, in *Dictionary of Algorithms and Data Structures* [online], P. E. Black, ed. 24 November 2020. (accessed 5.11.2022) Available from: https://www.nist.gov/dads/HTML/christofides.html
+[5] P. E. Black, Christofides algorithm, in *Dictionary of Algorithms and Data Structures* [online], P. E. Black, ed. 24 November 2020. (accessed 5.11.2022) Available from: https://www.nist.gov/dads/HTML/christofides.html
