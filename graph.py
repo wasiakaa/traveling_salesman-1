@@ -1,3 +1,4 @@
+import networkx as nx
 class graph():
     def __init__(self, M):
         ''' M can be a dictionary or an adjacency matrix (list of lists) '''
@@ -28,12 +29,14 @@ class graph():
         '''a,b - vertices of a graph, add edge {a,b} with weight =w'''
         self.G[a][b]=w
         self.G[b][a] = w
+
     def to_nx(self):
-        NXG=nx.empty_graph()
+        NXG = nx.empty_graph()
         for v in self.G:
             NXG.add_node(v)
         for v in self.G:
             for w in self.G[v]:
-                NXG.add_edge(v,w,wegiht=self.G[v][w])
-       
+                NXG.add_edge(v, w, wegiht=self.G[v][w])
+
         return NXG
+

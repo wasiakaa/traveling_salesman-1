@@ -17,7 +17,6 @@ def is_path(G,a,b):
     return False
 
 
-
 def add_edge_cycle(G,a,b):
     '''G- undirected tree (dictionary), a,b - vertices in G
     returns true if after we add an edge {a,b}, there is a cycle in G + {a,b}'''
@@ -31,7 +30,7 @@ def find_min_weight(G):
     returns [a,b] where {a,b} is an edge with minimal weight'''
 
     #assign m any weight
-
+    m=-1
     for v in G:
         if G[v]!={}:#i need a vertice that has an edge
 
@@ -40,7 +39,8 @@ def find_min_weight(G):
             a=v
             b=k
             break
-
+    if m==-1:
+        return False
 
 
     for v in G:
