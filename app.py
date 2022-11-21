@@ -2,6 +2,8 @@ from tkinter import *
 
 root = Tk()
 
+G = nx.empty_graph()
+
 #label widget
 def myClick():
     Label(root, text="xd").grid(row=0)
@@ -19,9 +21,11 @@ myButton2.grid(row=2)
 
 def wyswietl():
     tajp=nx.empty_graph()
+    global G
     if (type(G)==type(tajp)):
-        plt.show()
         nx.draw(G)
+        plt.show()
+        
 
     return
 myButton3 = Button(root,text="Wyswietl",padx=p,pady=p,font=50,command=wyswietl)
