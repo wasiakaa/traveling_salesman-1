@@ -22,6 +22,15 @@ def christofides(G):
 
     E = nx.eulerian_circuit(Multigraf)
 
-    'H = cykl Hamiltona z E'
+    vertices = [u for u, v in nx.eulerian_circuit(E)]
 
-    'return H'
+    H = list()
+    m = len(vertices)
+    for i in range(m):
+        if vertices[i] not in H:
+            H.append(vertices[i])
+        return(H)
+
+    return(H)
+
+
