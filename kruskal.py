@@ -1,5 +1,5 @@
 from graph import *
-
+import copy
 def is_path(G,a,b):
     ''' true if htere is a path from a to b in G else false, bfss'''
     visited = []
@@ -60,7 +60,7 @@ def kruskal(Gr):
     '''Gr is an undirected graph (class graph) that is connected
     returns minimal spanning tree'''
     #i create a graph with no edges
-    graf=graph(Gr.G.copy())
+    graf=graph(copy.deepcopy(Gr.G))
     T={}
     for v in graf.G:
         T[v]={}
@@ -79,7 +79,6 @@ def kruskal(Gr):
 
 
     return T
-
 
 
 
