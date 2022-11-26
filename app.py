@@ -22,6 +22,7 @@ def save():
     file.close()
 
 
+
 # Funkcja wczytuje graf z pliku i zapisuje go do zmiennej globalnej graph_example.
 # Przyjmuję konwencje według której graf w pliku jest zapisany w postaci m linii, a w każdej
 # linii 3 liczby a, b, v oddzielone spacją. m oznacza liczbę krawędzi, a i b wierzchołki, a v
@@ -29,7 +30,7 @@ def save():
 # Można ewentualnie dopisać sprawdzenie poprawności formatu danych wejściowych.
 def load_graph_from_file():
     D = {}  # To będzie graf który wczytamy.
-    file = "Examples/example.in"
+    file = "Examples/example_in.txt"
 
     with open(file) as f:
         for line in f.readlines():
@@ -49,7 +50,7 @@ def load_graph_from_file():
 # Bierze graf ze zmiennej globalnej graph_example, wywołuje na nim kruskala, a wynik zapisuje do pliku.
 # Format zapisanych danyh taki sam jak w pliku wejściowym.
 def save_kruskal_graph_to_file():
-    file = "Examples/example.out"
+    file = "Examples/example_out.txt"
     my_graph = kruskal(graph(graph_example))
     vertices = my_graph.items()
 
