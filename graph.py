@@ -11,8 +11,8 @@ class graph():
             for v in M.nodes:
                 self.G[v]={}
             for (v,w) in M.edges:
-                self.G[v][w]=M.get_edge_data(v,w)['wegiht']
-                self.G[w][v] = M.get_edge_data(v, w)['wegiht']
+                self.G[v][w]=M.get_edge_data(v,w)['weight']
+                self.G[w][v] = M.get_edge_data(v, w)['weight']
             return
         if(type(M)!=list):
             raise Exception("sorry, wrong type")
@@ -36,7 +36,7 @@ class graph():
             NXG.add_node(v)
         for v in self.G:
             for w in self.G[v]:
-                NXG.add_edge(v, w, wegiht=self.G[v][w])
+                NXG.add_edge(v, w, weight=self.G[v][w])
 
         return NXG
 
