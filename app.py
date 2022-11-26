@@ -22,6 +22,7 @@ def save():
     file.close()
 
 
+
 # Funkcja wczytuje graf z pliku i zapisuje go do zmiennej globalnej graph_example.
 # Przyjmuję konwencje według której graf w pliku jest zapisany w postaci m linii, a w każdej
 # linii 3 liczby a, b, v oddzielone spacją. m oznacza liczbę krawędzi, a i b wierzchołki, a v
