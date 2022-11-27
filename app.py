@@ -1,5 +1,6 @@
 from tkinter import *
 from kruskal import kruskal
+from christofides import christofides
 from graph import *
 import networkx as nx
 import sys
@@ -39,8 +40,8 @@ def load_graph_from_file():
             v = line[4]
             if a not in D:
                 D[a] = {}
-            D[a][b] = v
-
+            D[a][b] = int(v)
+    print(D)
     global graph_example
     graph_example = D
 
@@ -65,6 +66,21 @@ def save_kruskal_graph_to_file():
     f.close()
 
     return
+def save_christo_graph_to_file():
+    file = "Examples/example_out.txt"
+    hamilton = christofides(graph(graph_example))
+
+
+    f = open(file, "w")  # "w" oznacza, że jeśli plik nie istniał to go stworzy, a jeśli istniał to go nadpisze.
+    for v in hamilton:
+
+        line = ' '.join([v[0]])
+        f.write(line)
+
+
+    f.close()
+
+    return
 
 
 def end_app():
@@ -73,7 +89,7 @@ def end_app():
 
 myButton1 = Button(root, text="Wczytaj graf z pliku", padx=50, pady=50, font=50, command=load_graph_from_file)
 myButton2 = Button(root, text="Zapisz wynik kruskala do pliku", padx=50, pady=50, font=50,
-                   command=save_kruskal_graph_to_file)
+                   command=save_christo_graph_to_file)
 myButton3 = Button(root, text="Zakończ", padx=50, pady=50, font=50, command=end_app)
 myButton1.grid(row=1)
 myButton2.grid(row=2)
