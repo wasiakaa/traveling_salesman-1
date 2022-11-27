@@ -7,30 +7,13 @@ import sys
 
 root = Tk()
 
-G = nx.empty_graph()
 
-graph_example = {}
-
-
-# label widget
-def myClick():
-    Label(root, text="xd").grid(row=0)
-
-
-def save():
-    file = open('xdd.txt', 'w')
-    file.write('no hej')
-    file.close()
-
-
-
-# Funkcja wczytuje graf z pliku i zapisuje go do zmiennej globalnej graph_example.
-# Przyjmuję konwencje według której graf w pliku jest zapisany w postaci m linii, a w każdej
-# linii 3 liczby a, b, v oddzielone spacją. m oznacza liczbę krawędzi, a i b wierzchołki, a v
-# to waga krawędzi między nimi.
-# Można ewentualnie dopisać sprawdzenie poprawności formatu danych wejściowych.
+'''The function loads a graph from a file and saves it to a global variable graph_example.
+I adopt the convention according to which the graph in the file is written in the form of m lines, and in each
+line 3 numbers a, b, v separated by a space. m is the number of edges of graph, a and b are vertices, and v
+is the weight of the edges between them.'''
 def load_graph_from_file():
-    D = {}  # To będzie graf który wczytamy.
+    D = {}  # this will be the graph we load
     file = "Examples/example_in.txt"
 
     with open(file) as f:
@@ -48,14 +31,14 @@ def load_graph_from_file():
     return
 
 
-# Bierze graf ze zmiennej globalnej graph_example, wywołuje na nim kruskala, a wynik zapisuje do pliku.
-# Format zapisanych danyh taki sam jak w pliku wejściowym.
+'''The function takes a graph from the global variable graph_example, calls kruskal on it 
+and saves the result to a file. The format of the saved data is the same as in the input file'''
 def save_kruskal_graph_to_file():
     file = "Examples/example_out.txt"
     my_graph = kruskal(graph(graph_example))
     vertices = my_graph.items()
 
-    f = open(file, "w")  # "w" oznacza, że jeśli plik nie istniał to go stworzy, a jeśli istniał to go nadpisze.
+    f = open(file, "w")  # "w" means that if the file did not exist it will create it, if it exists it will overwrite it
     for v in vertices:
         edges = v[1].items()
         for e in edges:
@@ -66,17 +49,16 @@ def save_kruskal_graph_to_file():
     f.close()
 
     return
+
+
 def save_christo_graph_to_file():
     file = "Examples/example_out.txt"
     hamilton = christofides(graph(graph_example))
 
-
-    f = open(file, "w")  # "w" oznacza, że jeśli plik nie istniał to go stworzy, a jeśli istniał to go nadpisze.
+    f = open(file, "w")  # "w" means that if the file did not exist it will create it, if it exists it will overwrite it
     for v in hamilton:
-
         line = ' '.join([v[0]])
         f.write(line)
-
 
     f.close()
 
@@ -87,25 +69,12 @@ def end_app():
     sys.exit()
 
 
-myButton1 = Button(root, text="Wczytaj graf z pliku", padx=50, pady=50, font=50, command=load_graph_from_file)
-myButton2 = Button(root, text="Zapisz wynik kruskala do pliku", padx=50, pady=50, font=50,
+myButton1 = Button(root, text="Load graph from file", padx=50, pady=50, font=50, command=load_graph_from_file)
+myButton2 = Button(root, text="Save christofides graph to file", padx=50, pady=50, font=50,
                    command=save_christo_graph_to_file)
-myButton3 = Button(root, text="Zakończ", padx=50, pady=50, font=50, command=end_app)
+myButton3 = Button(root, text="End process", padx=50, pady=50, font=50, command=end_app)
 myButton1.grid(row=1)
 myButton2.grid(row=2)
 myButton3.grid(row=3)
-
-# def wyswietl():
-#     tajp=nx.empty_graph()
-#     global G
-#     if (type(G)==type(tajp)):
-#         nx.draw(G)
-#         plt.show()
-#
-#     return
-
-
-# myButton3 = Button(root,text="Wyswietl",padx=p,pady=p,font=50,command=wyswietl)
-# myButton3.grid(row=3)
 
 root.mainloop()

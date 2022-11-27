@@ -5,7 +5,7 @@ from graph import *
 
 class MyTestCase(unittest.TestCase):
 
-    # I'm testing the "is_path" function.
+    # I'm testing the "is_path" function
 
     def test_is_path_1(self):
         # Given
@@ -72,7 +72,7 @@ class MyTestCase(unittest.TestCase):
         # Then
         self.assertEqual(expected_result, result)
 
-    # I'm testing the "add_edge_cycle" function.
+    # I'm testing the "add_edge_cycle" function
 
     def test_add_edge_cycle_1(self):
         # Given
@@ -139,7 +139,7 @@ class MyTestCase(unittest.TestCase):
         # Then
         self.assertEqual(expected_result, result)
 
-    # I'm testing the "find_min_weight" function.
+    # I'm testing the "find_min_weight" function
 
     def test_find_min_weight_1(self):
         # Given
@@ -163,9 +163,9 @@ class MyTestCase(unittest.TestCase):
         # Then
         self.assertEqual(expected_result, result)
 
-    def test_find_min_weight_2(self):
+    def test_find_min_weight_3(self):
         # Given
-        G2 = (graph({'0': {}, '1': {}, '2': {}}).G)
+        G2 = graph({'0': {}, '1': {}, '2': {}}).G
         expected_result = False
         # When
         result = find_min_weight(G2)
@@ -173,7 +173,7 @@ class MyTestCase(unittest.TestCase):
         # Then
         self.assertEqual(expected_result, result)
 
-    # I'm testing the "kruskal" function.
+    # I'm testing the "kruskal" function
     def test_kruskal_1(self):
         # Given
         G3 = graph({'0': {'1': 0.1, '2': 0.2, '3': 0.3}, '1': {'0': 0.1, '2': 0.3, '3': 0.4},
