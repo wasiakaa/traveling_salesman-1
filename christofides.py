@@ -24,7 +24,7 @@ def christofides(G):
     G_odd = nx.subgraph(G.to_nx(), MST_odd)
     # minimum-weight perfect matching of G_odd
     M = nx.Graph()
-    M.add_edges_from(min_match(G_odd))
+    M.add_edges_from(nx.min_weight_matching(G_odd))
 
     # multigraph made from edges of MST and M
     multi_MST = nx.MultiGraph()
@@ -48,7 +48,6 @@ def christofides(G):
             H.append(vertices[j])
 
     return H
-
 
 # example
 
