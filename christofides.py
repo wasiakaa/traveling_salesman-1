@@ -6,7 +6,7 @@ import networkx as nx
 
 def christofides(G):
     '''Returns vertices of a Hamiltonian cycle with the cost lower or equal
-     to 1.5 of the cost of the optimal Hamiltonian cycle in graph G.'''
+     to 1.5 of the cost of the optimal Hamiltonian cycle in graph G'''
 
     # minimum spanning tree
     MST = graph(kruskal(G))
