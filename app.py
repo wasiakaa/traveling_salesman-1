@@ -2,16 +2,16 @@ from tkinter import *
 from kruskal import kruskal
 from christofides import christofides
 from graph import *
-import networkx as nx
 import sys
 
 root = Tk()
-
 
 '''The function loads a graph from a file and saves it to a global variable graph_example.
 I adopt the convention according to which the graph in the file is written in the form of m lines, and in each
 line 3 numbers a, b, v separated by a space. m is the number of edges of graph, a and b are vertices, and v
 is the weight of the edges between them.'''
+
+
 def load_graph_from_file():
     D = {}  # this will be the graph we load
     file = "Examples/example_in.txt"
@@ -32,6 +32,8 @@ def load_graph_from_file():
 
 '''The function takes a graph from the global variable graph_example, calls kruskal on it 
 and saves the result to a file. The format of the saved data is the same as in the input file'''
+
+
 def save_kruskal_graph_to_file():
     file = "Examples/example_out.txt"
     my_graph = kruskal(graph(graph_example))
