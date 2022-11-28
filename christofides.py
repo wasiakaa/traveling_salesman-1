@@ -5,7 +5,8 @@ import networkx as nx
 
 
 def christofides(G):
-    """Returns a Hamiltonian cycle with the cost lower or equal to 1.5 of the cost of the optimal Hamiltonian cycle."""
+    '''Returns vertices of a Hamiltonian cycle with the cost lower or equal
+     to 1.5 of the cost of the optimal Hamiltonian cycle in graph G.'''
 
     # minimum spanning tree
     MST = graph(kruskal(G))
@@ -51,9 +52,8 @@ def christofides(G):
 
 # example
 
-#G3 = graph({'0': {'1': 1, '2': 2, '3': 2, '4': 4}, '1': {'0': 1, '2': 2, '3': 5, '4': 6},
-            #'2': {'0': 2, '1': 2, '3': 2, '4': 2}, '3': {'0': 2, '1': 5, '2': 2, '4': 1},
-            #'4': {'0': 4, '1': 6, '2': 2, '3': 1}})
+# G3 = graph({'0': {'1': 1, '2': 2, '3': 2, '4': 4}, '1': {'0': 1, '2': 2, '3': 5, '4': 6},
+            # '2': {'0': 2, '1': 2, '3': 2, '4': 2}, '3': {'0': 2, '1': 5, '2': 2, '4': 1},
+            # '4': {'0': 4, '1': 6, '2': 2, '3': 1}})
 
-#print(christofides(G3))
-
+# print(christofides(G3))
