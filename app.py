@@ -24,7 +24,6 @@ def load_graph_from_file():
             if a not in D:
                 D[a] = {}
             D[a][b] = int(v)
-    print(D)
     global graph_example
     graph_example = D
 
