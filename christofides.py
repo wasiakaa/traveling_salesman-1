@@ -1,6 +1,5 @@
 from kruskal import *
-import graph
-from min_match import *
+from graph import *
 import networkx as nx
 
 
@@ -16,19 +15,6 @@ def odd_deg_vertices(G):
             G_odd.append(degs[j][0])
 
     return G_odd
-
-
-def multigraph(G, H):
-    '''Returns a multigraph made from edges of graphs G and H'''
-    multi_G = nx.MultiGraph()
-    multi_G.add_edges_from(G.edges())
-
-    multi_H = nx.MultiGraph()
-    multi_H.add_edges_from(H.edges())
-
-    multi_G.update(edges=multi_H.edges())
-
-    return multi_G
 
 
 def ham_from_eul(E):
@@ -50,6 +36,12 @@ def christofides(G):
     '''Returns vertices of a Hamiltonian cycle with the cost lower or equal
      to 1.5 of the cost of the optimal Hamiltonian cycle in graph G'''
 
+    if nx.edges(nx.complete_graph(nx.nodes(G.to_nx()))) != nx.edges(G.to_nx()):
+        raise Exception("graph G is not complete")
+
+    if len(list(nx.nodes(G.to_nx()))) < 3:
+        raise Exception("G has not enough vertices")
+
     # minimum spanning tree
     MST = graph(kruskal(G))
     # odd-degree vertices of MST
@@ -62,21 +54,20 @@ def christofides(G):
     M.add_edges_from(nx.min_weight_matching(G_odd))
 
     # multigraph made from edges of MST and M
-    multi = multigraph(MST.to_nx(), M)
+    multi_MST = nx.MultiGraph()
+    multi_MST.add_edges_from(nx.edges(MST.to_nx()))
+
+    multi_M = nx.MultiGraph()
+    multi_M.add_edges_from(M.edges())
+
+    multi_MST.update(edges=multi_M.edges())
+
+    multigraph = multi_MST
 
     # Eulerian cycle in multigraph (starting in '0' vertex)
-    E = nx.eulerian_circuit(multi, source='0')
+    E = nx.eulerian_circuit(multigraph, source='0')
 
     # Hamiltonian cycle made from consecutive varying vertices of E
     H = ham_from_eul(E)
 
     return H
-
-
-# example
-
-# G3 = graph({'0': {'1': 1, '2': 2, '3': 2, '4': 4}, '1': {'0': 1, '2': 2, '3': 5, '4': 6},
-#             '2': {'0': 2, '1': 2, '3': 2, '4': 2}, '3': {'0': 2, '1': 5, '2': 2, '4': 1},
-#             '4': {'0': 4, '1': 6, '2': 2, '3': 1}})
-#
-# print(christofides(G3))
