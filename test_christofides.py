@@ -1,5 +1,4 @@
 import unittest
-
 from christofides import *
 from graph import *
 
@@ -43,56 +42,6 @@ class MyTestCase(unittest.TestCase):
         # Then
         self.assertEqual(expected_result, result)
 
-    # def test_multigraph1(self):
-    #     # Given
-    #     H1 = graph({'0': {'1': 1, '3': 2, '4': 4}, '1': {'0': 1, '2': 2},
-    #                 '2': {'1': 2}, '3': {'0': 2, '4': 1},
-    #                 '4': {'0': 4, '3': 1}})
-    #     K1 = graph({'0': {'1': 1, '3': 2}, '1': {'0': 1, '4': 6},
-    #                 '2': {}, '3': {'0': 2, '4': 1},
-    #                 '4': {'1': 6, '3': 1}})
-    #
-    #     expected_result = nx.MultiGraph(graph({'0': {'1': 1, '1': 1, '3': 2, '3': 2, '4': 4},
-    #                                            '1': {'0': 1, '0': 1, '2': 2, '4': 6},
-    #                                  '2': {'1': 2}, '3': {'0': 2, '0': 2, '4': 1, '4': 1},
-    #                                  '4': {'0': 4, '1': 6, '3': 1, '3': 1}}).to_nx())
-    #
-    #     # When
-    #     result = multigraph(H1.to_nx(), K1.to_nx())
-    #
-    #     # Then
-    #     self.assertEqual(expected_result, result)
-
-    # def test_multigraph2(self):
-    #     # Given
-    #     H2 = graph({'0': {'1': 1, '2': 2}, '1': {'0': 1}, '2': {'0': 2}})
-    #     K2 = graph({'1': {'2': 2}, '2': {'1': 2}})
-    #
-    #     expected_result = graph({'0': {'1': 1, '2': 2}, '1': {'0': 1, '2': 2}, '2': {'0': 2, '1': 2}}).to_nx()
-    #
-    #     # When
-    #     result = multigraph(H2, K2)
-    #
-    #     # Then
-    #     self.assertEqual(expected_result, result)
-    #
-    # def test_multigraph3(self):
-    #     # Given
-    #     H3 = graph({'0': {'1': 1.5, '2': 0.2, '3': 23, '4': 4.5}, '1': {'0': 1.5, '2': 2.3, '3': 7.5, '4': 6},
-    #                 '2': {'0': 0.2, '1': 2.3, '3': 2, '4': 22}, '3': {'0': 23, '1': 7.5, '2': 2, '4': 9.1},
-    #                 '4': {'0': 4.5, '1': 6, '2': 22, '3': 9.1}})
-    #     K3 = graph({'0': {'1': 1.5}, '1': {'0': 1.5}})
-    #     expected_result = graph({'0': {'1': 1.5, '1': 1.5, '2': 0.2, '3': 23, '4': 4.5},
-    #                              '1': {'0': 1.5, '0': 1.5, '2': 2.3, '3': 7.5, '4': 6},
-    #                              '2': {'0': 0.2, '1': 2.3, '3': 2, '4': 22}, '3': {'0': 23, '1': 7.5, '2': 2, '4': 9.1},
-    #                              '4': {'0': 4.5, '1': 6, '2': 22, '3': 9.1}}).to_nx()
-    #
-    #     # When
-    #     result = multigraph(H3, K3)
-    #
-    #     # Then
-    #     self.assertEqual(expected_result, result)
-    #
     def test_ham_from_eul1(self):
         # Given
         E1 = nx.eulerian_circuit(graph({'0': {'1': 1, '4': 4}, '1': {'0': 1, '2': 2, '3': 5, '4': 6},
@@ -181,43 +130,72 @@ class MyTestCase(unittest.TestCase):
         self.assertTrue(result in [expected_result1, expected_result2, expected_result3,
                                    expected_result4, expected_result5, expected_result6])
 
-    # def test_christofides_1(self):
-    #     # Given
-    #     D1 = graph({'0': {'1': 1, '2': 2, '3': 2, '4': 4}, '1': {'0': 1, '2': 2, '3': 5, '4': 6},
-    #                 '2': {'0': 2, '1': 2, '3': 2, '4': 2}, '3': {'0': 2, '1': 5, '2': 2, '4': 1},
-    #                 '4': {'0': 4, '1': 6, '2': 2, '3': 1}})
-    #     expected_result = ['0', '3', '4', '2', '1']
-    #
-    #     # When
-    #     result = christofides(D1)
-    #
-    #     # Then
-    #     self.assertEqual(expected_result, result)
-    #
-    # def test_christofides_2(self):
-    #     # Given
-    #     D2 = graph({'0': {'1': 10, '2': 2, '3': 2, '4': 24, '5': 15}, '1': {'0': 10, '2': 12, '3': 50, '4': 26, '5': 7},
-    #                 '2': {'0': 2, '1': 12, '3': 29, '4': 8, '5': 31}, '3': {'0': 2, '1': 50, '2': 29, '4': 1, '5': 14},
-    #                 '4': {'0': 24, '1': 26, '2': 8, '3': 1, '5': 10},
-    #                 '5': {'0': 15, '1': 7, '2': 31, '3': 14, '4': 10}})
-    #     expected_result = ['0', '3', '4', '2', '1', '5']
-    #
-    #     # When
-    #     result = christofides(D2)
-    #
-    #     # Then
-    #     self.assertEqual(expected_result, result)
-    #
-    # def test_christofides_3(self):
-    #     # Given
-    #     D3 = graph({'0': {}})
-    #     expected_result = ['0', '3', '4', '2', '1', '5']
-    #
-    #     # When
-    #     result = christofides(D3)
-    #
-    #     # Then
-    #     self.assertEqual(expected_result, result)
+    def test_christofides_1(self):
+        # Given
+        D1 = graph({'0': {'1': 1, '2': 20, '3': 2}, '1': {'0': 1, '2': 28, '3': 5},
+                    '2': {'0': 20, '1': 28, '3': 32}, '3': {'0': 2, '1': 5, '2': 32}})
+        expected_result1 = ['0', '3', '1', '2']
+        expected_result2 = ['2', '0', '3', '1']
+        expected_result3 = ['1', '2', '0', '3']
+        expected_result4 = ['3', '1', '2', '0']
+        expected_result5 = ['0', '2', '1', '3']
+        expected_result6 = ['3', '0', '2', '1']
+        expected_result7 = ['1', '3', '0', '2']
+        expected_result8 = ['2', '1', '3', '0']
+        expected_result9 = ['0', '2', '3', '1']
+        expected_result10 = ['1', '0', '2', '3']
+        expected_result11 = ['3', '1', '0', '2']
+        expected_result12 = ['2', '3', '1', '0']
+        expected_result13 = ['0', '1', '3', '2']
+        expected_result14 = ['2', '0', '1', '3']
+        expected_result15 = ['3', '2', '0', '1']
+        expected_result16 = ['1', '3', '2', '0']
+
+        # When
+        result = christofides(D1)
+
+        # Then
+        self.assertTrue(result in [expected_result1, expected_result2, expected_result3, expected_result4,
+                                   expected_result5, expected_result6, expected_result7, expected_result8,
+                                   expected_result9, expected_result10, expected_result11, expected_result12,
+                                   expected_result13, expected_result14, expected_result15, expected_result16])
+
+    def test_christofides_2(self):
+        # Given
+        D2 = graph({'0': {'1': 3, '2': 3}, '1': {'0': 3, '2': 3}, '2': {'0': 3, '1': 3}})
+        expected_result1 = ['0', '1', '2']
+        expected_result2 = ['0', '2', '1']
+        expected_result3 = ['1', '2', '0']
+        expected_result4 = ['2', '1', '0']
+        expected_result5 = ['2', '0', '1']
+        expected_result6 = ['1', '0', '2']
+
+        # When
+        result = christofides(D2)
+
+        # Then
+        self.assertTrue(result in [expected_result1, expected_result2, expected_result3,
+                                   expected_result4, expected_result5, expected_result6])
+
+    def test_christofides_3(self):
+        # Given
+        D3 = graph({'0': {'1': 2, '2': 270, '3': 1000}, '1': {'0': 2, '2': 15, '3': 120},
+                    '2': {'0': 270, '1': 15, '3': 50}, '3': {'0': 1000, '1': 120, '2': 50}})
+        expected_result1 = ['0', '3', '2', '1']
+        expected_result2 = ['1', '0', '3', '2']
+        expected_result3 = ['2', '1', '0', '3']
+        expected_result4 = ['3', '2', '1', '0']
+        expected_result5 = ['0', '1', '2', '3']
+        expected_result6 = ['3', '0', '1', '2']
+        expected_result7 = ['2', '3', '0', '1']
+        expected_result8 = ['1', '2', '3', '0']
+
+        # When
+        result = christofides(D3)
+
+        # Then
+        self.assertTrue(result in [expected_result1, expected_result2, expected_result3, expected_result4,
+                                   expected_result5, expected_result6, expected_result7, expected_result8])
 
 
 if __name__ == '__christofides__':
