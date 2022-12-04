@@ -42,4 +42,3 @@ class graph():
                 NXG.add_edge(v, w, weight=self.G[v][w])
 
         return NXG
-print(set([1,12,44])==set([1,1,44]))
