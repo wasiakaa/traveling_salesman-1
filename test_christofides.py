@@ -205,8 +205,11 @@ class MyTestCase(unittest.TestCase):
 
         #When
         result = christofides(D4)
+        same_results=[]
+        for i in range(1,4):
+            same_results.append([result[(0+i)%4],result[(1+i)%4],result[(2+i)%4],result[(3+i)%4]])
 
         #Then
-        self.assertTrue(set(result)==set(expected))
+        self.assertTrue(expected in same_results)
 if __name__ == '__christofides__':
     unittest.christofides()
