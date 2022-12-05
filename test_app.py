@@ -90,5 +90,5 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(expected_result, result)
 
 
-if __name__ == '__app__':
-    unittest.app()
+if __name__ == '__main__':
+    unittest.main()
