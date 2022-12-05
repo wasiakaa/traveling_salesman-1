@@ -76,4 +76,3 @@ def kruskal(Gr):
         del graf.G[d][c]
 
     return T
-
