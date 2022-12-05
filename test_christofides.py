@@ -220,6 +220,19 @@ class MyTestCase(unittest.TestCase):
                                    expected_result13, expected_result14, expected_result15, expected_result16]
                         and result_cost <= 930)
 
+    def test_christofides_4(self):
+        #Given
+        D4 = graph({'0': {'1': 2, '2': 270, '3': 1000}, '1': {'0': 2, '2': 15, '3': 120},
+                           '2': {'0': 270, '1': 15, '3': 50}, '3': {'0': 1000, '1': 120, '2': 50}})
+        expected=nx.approximation.traveling_salesman_problem(D4.to_nx(), cycle=False)
 
+        #When
+        result = christofides(D4)
+        same_results=[]
+        for i in range(1,4):
+            same_results.append([result[(0+i)%4],result[(1+i)%4],result[(2+i)%4],result[(3+i)%4]])
+
+        #Then
+        self.assertTrue(expected in same_results)
 if __name__ == '__christofides__':
     unittest.christofides()
