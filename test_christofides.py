@@ -233,5 +233,5 @@ class MyTestCase(unittest.TestCase):
         self.assertTrue(expected in same_results)
 
 
-if __name__ == '__christofides__':
-    unittest.christofides()
+if __name__ == '__main__':
+    unittest.main()
