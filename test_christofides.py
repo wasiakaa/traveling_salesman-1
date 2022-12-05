@@ -171,10 +171,10 @@ class MyTestCase(unittest.TestCase):
         result = christofides(D2)
 
         result_cost = 0
-        for k in range(len(result)-1):
-            result_cost = result_cost + D2.G[result[k]][result[k+1]]
+        for k in range(len(result) - 1):
+            result_cost = result_cost + D2.G[result[k]][result[k + 1]]
 
-        result_cost = result_cost + D2.G[result[0]][result[len(result)-1]]
+        result_cost = result_cost + D2.G[result[0]][result[len(result) - 1]]
 
         # Then
         self.assertTrue(result in [expected_result1, expected_result2, expected_result3,
@@ -218,18 +218,20 @@ class MyTestCase(unittest.TestCase):
                         and result_cost <= 930)
 
     def test_christofides_4(self):
-        #Given
+        # Given
         D4 = graph({'0': {'1': 2, '2': 270, '3': 1000}, '1': {'0': 2, '2': 15, '3': 120},
-                           '2': {'0': 270, '1': 15, '3': 50}, '3': {'0': 1000, '1': 120, '2': 50}})
-        expected=nx.approximation.traveling_salesman_problem(D4.to_nx(), cycle=False)
+                    '2': {'0': 270, '1': 15, '3': 50}, '3': {'0': 1000, '1': 120, '2': 50}})
+        expected = nx.approximation.traveling_salesman_problem(D4.to_nx(), cycle=False)
 
-        #When
+        # When
         result = christofides(D4)
-        same_results=[]
-        for i in range(1,4):
-            same_results.append([result[(0+i)%4],result[(1+i)%4],result[(2+i)%4],result[(3+i)%4]])
+        same_results = []
+        for i in range(1, 4):
+            same_results.append([result[(0 + i) % 4], result[(1 + i) % 4], result[(2 + i) % 4], result[(3 + i) % 4]])
 
-        #Then
+        # Then
         self.assertTrue(expected in same_results)
+
+
 if __name__ == '__christofides__':
     unittest.christofides()
