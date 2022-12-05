@@ -134,7 +134,6 @@ class MyTestCase(unittest.TestCase):
         # Given
         D1 = graph({'0': {'1': 1, '2': 30, '3': 2}, '1': {'0': 1, '2': 29, '3': 3},
                     '2': {'0': 30, '1': 29, '3': 32}, '3': {'0': 2, '1': 3, '2': 32}})
-
         expected_result1 = ['0', '3', '2', '1']
         expected_result2 = ['1', '0', '3', '2']
         expected_result3 = ['2', '1', '0', '3']
@@ -161,7 +160,6 @@ class MyTestCase(unittest.TestCase):
     def test_christofides2(self):
         # Given
         D2 = graph({'0': {'1': 3, '2': 3}, '1': {'0': 3, '2': 3}, '2': {'0': 3, '1': 3}})
-
         expected_result1 = ['0', '1', '2']
         expected_result2 = ['0', '2', '1']
         expected_result3 = ['1', '2', '0']
@@ -186,7 +184,6 @@ class MyTestCase(unittest.TestCase):
         # Given
         D3 = graph({'0': {'1': 120, '2': 270, '3': 100}, '1': {'0': 120, '2': 150, '3': 120},
                     '2': {'0': 270, '1': 150, '3': 250}, '3': {'0': 100, '1': 120, '2': 250}})
-
         expected_result1 = ['0', '3', '2', '1']
         expected_result2 = ['1', '0', '3', '2']
         expected_result3 = ['2', '1', '0', '3']
