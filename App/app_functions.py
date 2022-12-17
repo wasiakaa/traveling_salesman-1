@@ -1,6 +1,6 @@
-from kruskal import kruskal
-from christofides import christofides
-from graph import *
+from Christofides.kruskal import kruskal
+from Christofides.christofides import christofides
+from Christofides.graph import *
 import sys
 
 '''The function loads a graph from a file and saves it to a global variable graph_example.
@@ -31,7 +31,7 @@ and saves the result to a file. The format of the saved data is the same as in t
 
 
 def save_kruskal_graph_to_file():
-    file = "Examples/example_out.txt"
+    file = "example_out.txt"
     my_graph = kruskal(graph(graph_example))
     vertices = my_graph.items()
 

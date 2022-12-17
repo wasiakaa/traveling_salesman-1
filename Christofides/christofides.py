@@ -1,5 +1,5 @@
-from kruskal import *
-from graph import *
+from Christofides.kruskal import *
+from Christofides.graph import *
 import networkx as nx
 
 
