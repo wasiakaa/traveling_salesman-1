@@ -1,16 +1,12 @@
-from tkinter import *
-from kruskal import kruskal
-from christofides import christofides
-from graph import *
+from Christofides.kruskal import kruskal
+from Christofides.christofides import christofides
+from Christofides.graph import *
 import sys
-
-root = Tk()
 
 '''The function loads a graph from a file and saves it to a global variable graph_example.
 I adopt the convention according to which the graph in the file is written in the form of m lines, and in each
 line 3 numbers a, b, v separated by a space. m is the number of edges of graph, a and b are vertices, and v
 is the weight of the edges between them.'''
-
 
 def load_graph_from_file(filepath):
     D = {}  # this will be the graph we load
@@ -35,7 +31,7 @@ and saves the result to a file. The format of the saved data is the same as in t
 
 
 def save_kruskal_graph_to_file():
-    file = "Examples/example_out.txt"
+    file = "example_out.txt"
     my_graph = kruskal(graph(graph_example))
     vertices = my_graph.items()
 
@@ -68,14 +64,3 @@ def save_christo_graph_to_file(graph_to_save, filepath):
 
 def end_app():
     sys.exit()
-
-
-myButton1 = Button(root, text="Load graph from file", padx=50, pady=50, font=50, command=load_graph_from_file("Examples/example_in.txt"))
-myButton2 = Button(root, text="Save christofides graph to file", padx=50, pady=50, font=50,
-                   command=save_christo_graph_to_file(graph_example, "Examples/example_out.txt"))
-myButton3 = Button(root, text="End process", padx=50, pady=50, font=50, command=end_app)
-myButton1.grid(row=1)
-myButton2.grid(row=2)
-myButton3.grid(row=3)
-
-root.mainloop()
