@@ -1,5 +1,5 @@
 import unittest
-from app import *
+from app_functions import *
 from christofides import *
 
 
