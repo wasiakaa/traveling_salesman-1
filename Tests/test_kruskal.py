@@ -1,6 +1,6 @@
 import unittest
-from kruskal import *
-from graph import *
+from Christofides.kruskal import *
+from Christofides.graph import *
 
 
 class MyTestCase(unittest.TestCase):

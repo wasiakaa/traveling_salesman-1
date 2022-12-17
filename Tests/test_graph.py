@@ -1,5 +1,5 @@
 import unittest
-from graph import *
+from Christofides.graph import *
 
 
 class MyTestCase(unittest.TestCase):
