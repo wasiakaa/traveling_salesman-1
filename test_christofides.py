@@ -5,6 +5,8 @@ from graph import *
 
 class MyTestCase(unittest.TestCase):
 
+    # I'm testing the "odd_deg_vertices" function
+
     def test_odd_deg_vertices1(self):
         # Given
         G1 = graph({'0': {'1': 10, '2': 8}, '1': {'0': 10, '2': 2, '3': 5, '4': 6},
@@ -41,6 +43,8 @@ class MyTestCase(unittest.TestCase):
 
         # Then
         self.assertEqual(expected_result, result)
+
+    # I'm testing the "ham_from_eul" function
 
     def test_ham_from_eul1(self):
         # Given
@@ -129,6 +133,8 @@ class MyTestCase(unittest.TestCase):
         # Then
         self.assertTrue(result in [expected_result1, expected_result2, expected_result3,
                                    expected_result4, expected_result5, expected_result6])
+
+    # I'm testing the "christofides" function
 
     def test_christofides1(self):
         # Given
@@ -226,7 +232,7 @@ class MyTestCase(unittest.TestCase):
         # When
         result = christofides(D4)
         same_results = []
-        for i in range(1, 4):
+        for i in range(1, 5):
             same_results.append([result[(0 + i) % 4], result[(1 + i) % 4], result[(2 + i) % 4], result[(3 + i) % 4]])
 
         # Then
