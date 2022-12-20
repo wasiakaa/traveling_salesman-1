@@ -6,7 +6,7 @@ from Christofides.christofides import *
 class MyTestCase(unittest.TestCase):
     def test_load_graph_from_file_1(self):
         # Given
-        filepath = "/traveling_salesman-1/Tests/test_load_1.md"
+        filepath = "Tests/test_load_1.md"
         expected_result = {"0": {"1": 1, "2": 2}, "1": {"0": 1, "2": 2}, "2": {"0": 2, "1": 2}}
 
         # When
